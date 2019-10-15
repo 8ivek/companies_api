@@ -2,30 +2,31 @@
 
 ### Table structure: 
 
-tbl_companies
+**tbl_companies**
 id
 name
 title
 description
 services
 address
+city
+province
+country
 email
 phone
-search_keywords
+keywords
 
-example: 
-
-id: 1
-name: ABC Company
-title: ABC company tagline
-description: We are toronto based company for plumbing
-services: plumbing services
-email: abc@gmail.com
-phone: 416-xxx-xxxx
-address: 333 yonge street
-city: Toronto
-Province: Ontario
-Country: Canada
-keywords: plumbing, plumber
-
-===
+> example: 
+>
+> id: 1
+> name: ABC Company
+> title: Build your company app from the best in the field
+> description: We are Toronto based registered company for software development
+> services: web application development
+> email: abc@gmail.com
+> phone: 416-xxx-xxxx
+> address: 333 Yonge street
+> city: Toronto
+> Province: Ontario
+> Country: Canada
+> Keywords: web, applications
