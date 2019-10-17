@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use App\Company;
 use Illuminate\Http\Request;
 
 class CompanyController extends Controller
@@ -14,7 +14,9 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //
+        $companies = Company::orderBy('id', 'desc')->paginate(20);
+        //dd($companies);
+        return $companies;
     }
 
     /**

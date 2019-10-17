@@ -2,8 +2,12 @@
 ### Commands:
 1. composer install
 2. npm install
+3. php artisan migrate or php artisan migrate:rollback
+4. php artisan db:seed
+5. php artisan serve (for local deployment)
 
 ### Endpoints:
+url: <strong>http://localhost:8000/api/</strong>
 * **/companies:** returns list of all companies, by default it returns 20 of them.
   * **/companies?limit=20&page=2**: to return 20 result starting at page 2
 * **/companies/{company_id}**: returns single company information
