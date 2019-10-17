@@ -1,3 +1,13 @@
+## Installation
+### Commands:
+1. composer install
+2. npm install
+
+### Endpoints:
+* **/companies:** returns list of all companies, by default it returns 20 of them.
+  * **/companies?limit=20&page=2**: to return 20 result starting at page 2
+* **/companies/{company_id}**: returns single company information
+
 ## Companies table structure:
 
 ### Table structure: 
