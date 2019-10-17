@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,4 +15,12 @@ use Illuminate\Http\Request;
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+
+Route::apiResources([
+    'companies' => 'CompanyController'
+]);
+
+Route::fallback(function () {
+    return 'please contact us if you are seeing this continuously';
 });
