@@ -15,7 +15,6 @@ class CompanyController extends Controller
     public function index()
     {
         $companies = Company::orderBy('id', 'desc')->paginate(20);
-        //dd($companies);
         return $companies;
     }
 
@@ -38,7 +37,8 @@ class CompanyController extends Controller
      */
     public function show($id)
     {
-        //
+        $company = Company::where('id', $id)->first();
+        return $company;
     }
 
     /**

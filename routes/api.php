@@ -22,5 +22,6 @@ Route::apiResources([
 ]);
 
 Route::fallback(function () {
-    return 'please contact us if you are seeing this continuously';
+    return response()->json(['error' => ['message' => 'you are in the wrong place, contact us if its an error.']], 400)
+        ->header('Content-Type', 'text/json');
 });
