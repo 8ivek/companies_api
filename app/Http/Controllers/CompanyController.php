@@ -26,7 +26,26 @@ class CompanyController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'email',
+        ]);
+        $company = new Company([
+            'name' => $request->get('name'),
+            'title' => $request->get('title'),
+            'description' => $request->get('description'),
+            'services' => $request->get('services'),
+            'address' => $request->get('address'),
+            'city' => $request->get('city'),
+            'province' => $request->get('province'),
+            'country' => $request->get('country'),
+            'email' => $request->get('email'),
+            'phone' => $request->get('phone'),
+            'keywords' => $request->get('keywords'),
+        ]);
+        $company->save();
+        $company = Company::where('id', $company->id)->first();
+        return $company;
     }
 
     /**
