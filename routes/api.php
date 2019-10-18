@@ -13,14 +13,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/*Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
 
 Route::apiResources([
     'companies' => 'CompanyController'
 ]);
 
 Route::fallback(function () {
-    return 'please contact us if you are seeing this continuously';
+    return response()->json(['error' => ['message' => 'you are in the wrong place, contact us if its an error.']], 400)
+        ->header('Content-Type', 'text/json');
 });

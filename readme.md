@@ -8,9 +8,10 @@
 
 ### Endpoints:
 url: <strong>http://localhost:8000/api/</strong>
-* **/companies:** returns list of all companies, by default it returns 20 of them.
-  * **/companies?limit=20&page=2**: to return 20 result starting at page 2
-* **/companies/{company_id}**: returns single company information
+* **/companies:** returns list of all companies, by default it returns 10 of them.
+  * **/companies?page=2**: to returns 10 results starting at page 2
+* **/companies/{company_id}**: returns single company
+* view list of routes: **php artisan route:list**
 
 ## Companies table structure:
 

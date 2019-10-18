@@ -11,9 +11,9 @@
     <p>
         <p>You can access this api using: <strong>http://localhost:8000/api/</strong> example: <strong>http://localhost:8000/api/companies</strong></p>
         <h2>Available endpoints</h2>
-        <p><strong>/companies</strong>: returns list of all companies, by default it returns 20 of them.</p>
-        <p><strong>/companies?limit=20&page=2</strong>: to return 20 result starting at page 2</p>
-        <p><strong>/companies/{company_id}</strong>: returns single company information</p>
+        <p><strong>/companies</strong>: returns list of all companies, by default it returns 10 of them.</p>
+        <p><strong>/companies?page=2</strong>: to returns 10 result starting at page 2</p>
+        <p><strong>/companies/{company_id}</strong>: returns single company</p>
     </p>
     </body>
 </html>
