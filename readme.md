@@ -8,10 +8,17 @@
 
 ### Endpoints:
 url: <strong>http://localhost:8000/api/</strong>
-* **/companies:** returns list of all companies, by default it returns 10 of them.
-  * **/companies?page=2**: to returns 10 results starting at page 2
-* **/companies/{company_id}**: returns single company
-* view list of routes: **php artisan route:list**
+
+* **GET|HEAD** | / | welcome page 
+* **GET|HEAD** | **api/companies** | returns list of all companies, by default it returns 10 of them
+* **GET|HEAD** | **api/companies?page=2** | to returns 10 results starting at page 2
+* **POST** | **api/companies** | add new company, *see Companies API.postman_collection.json file*
+* **GET|HEAD**  | **api/companies/{company}** | returns a single company
+* **PUT|PATCH** | **api/companies/{company}** | update a company
+* **DELETE**    | **api/companies/{company}** | delete a company
+* **GET|HEAD**  | **api/{fallbackPlaceholder}** | all fallback calls comes  here.
+
+
 
 ## Companies table structure:
 
