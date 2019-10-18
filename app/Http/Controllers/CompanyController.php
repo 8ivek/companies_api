@@ -28,7 +28,7 @@ class CompanyController extends Controller
     {
         $request->validate([
             'name' => 'required',
-            'email' => 'email',
+            'email' => 'required',
         ]);
         $company = new Company([
             'name' => $request->get('name'),
@@ -44,7 +44,6 @@ class CompanyController extends Controller
             'keywords' => $request->get('keywords'),
         ]);
         $company->save();
-        $company = Company::where('id', $company->id)->first();
         return $company;
     }
 
@@ -69,7 +68,13 @@ class CompanyController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'email' => 'required',
+        ]);
+        $company = Company::where('id', $id)->first();
+        $company->update($request->all());
+        return $company;
     }
 
     /**
@@ -80,6 +85,11 @@ class CompanyController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $company = Company::where('id', $id)->first();
+        if($company) {
+            $company->delete();
+            return response()->json(['data' => 'Company delete successful.'], 200);
+        }
+        return response()->json(['data' => 'Company not found.'], 400);
     }
 }
