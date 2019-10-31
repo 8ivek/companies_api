@@ -16,16 +16,16 @@ class Companies extends Migration
         Schema::create('tbl_companies', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('name');
-            $table->string('title');
-            $table->text('description');
-            $table->string('services');
-            $table->string('address');
-            $table->string('city');
-            $table->string('province');
-            $table->string('country');
+            $table->string('title')->nullable()->default(null);
+            $table->text('description')->nullable()->default(null);
+            $table->string('services')->nullable()->default(null);
+            $table->string('address')->nullable()->default(null);
+            $table->string('city')->nullable()->default(null);
+            $table->string('province')->nullable()->default(null);
+            $table->string('country')->nullable()->default(null);
             $table->string('email')->unique();
-            $table->string('phone');
-            $table->text('keywords')->comment('comma separated list of keywords related to business');
+            $table->string('phone')->nullable()->default(null);
+            $table->text('keywords')->nullable()->default(null)->comment('comma separated list of keywords related to business');
             $table->timestamp('email_verified_at')->nullable();
             $table->timestamp('phone_verified_at')->nullable();
             $table->timestamps();
